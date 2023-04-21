@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 250px;
+            height: auto;
+            margin: auto;
+
+        }
+
+        .main-div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background-color: aqua;
+            padding: 10px;
+            box-shadow: 23px -13px lightblue;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            color: rgb(114, 109, 109);
+            background-color: rgb(214, 201, 201);
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(196, 187, 187);
+        }
+
+        input {
+            height: 50px;
+            padding: 10px;
+            text-align: end;
+            border: 0;
+            outline: 0;
+            font-size: 20px;
+            font-weight: 600;
+            color: rgb(114, 109, 109);
+
+        }
+
+        input[type=text]:focus {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Calculator</h1>
+        <div class="main-div">
+            <input type="text">
+            <div class="buttons">
+                <button class="btnNumber">%</button>
+                <button onclick="allClearFun()">AC</button>
+                <button onclick="clearFun()">C</button>
+                <button onclick="backBtn()">DEL</button>
+                <button class="btnNumber">7</button>
+                <button class="btnNumber">8</button>
+                <button class="btnNumber">9</button>
+                <button class="btnNumber">/</button>
+                <button class="btnNumber">4</button>
+                <button class="btnNumber">5</button>
+                <button class="btnNumber">6</button>
+                <button class="btnNumber">x</button>
+                <button class="btnNumber">1</button>
+                <button class="btnNumber">2</button>
+                <button class="btnNumber">3</button>
+                <button class="btnNumber">+</button>
+                <button class="btnNumber">0</button>
+                <button class="btnNumber">-</button>
+                <button class="btnNumber">.</button>
+                <button onclick="equalbtn()">=</button>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
+<script>
+    var input = document.querySelector("input");
+
+    const btn = document.querySelectorAll(".btnNumber");
+    btn.forEach((item) => {
+        item.addEventListener('click', function () {
+            let btnValue = item.innerHTML;
+            console.log(btnValue)
+            if (btnValue == "x") {
+                btnValue = "*";
+            }
+            input.value += btnValue;
+        })
+
+    })
+    function equalbtn() {
+        input.value = eval(input.value);
+
+
+    }
+    function allClearFun() {
+        input.value = "";
+
+    }
+    function clearFun() {
+        input.value = "0";
+
+    }
+    function backBtn() {
+        let delbtn = input.value;
+        input.value = delbtn.slice(0, -1);
+    }
+</script>

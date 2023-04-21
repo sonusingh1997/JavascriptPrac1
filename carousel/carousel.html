@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            background-color: #acb2b212;
+            height: 600px;
+            padding: 40px 0 0 0;
+        }
+
+        .carousel {
+            margin: auto;
+            width: 700px;
+            position: relative;
+            overflow: hidden;
+            height: 550px;
+            transition: 1s;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 550px;
+            position: absolute;
+        }
+
+        .prenext {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .prenext button {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            align-items: center;
+            top: 262px;
+            padding: 20px;
+            height: 0px;
+            border: 0;
+            outline: 0;
+            width: 9px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .prenext button:hover{
+            color:#aa3838;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="carousel">
+            <img src="../images/car.jpg" alt="" />
+            <img src="../images/apples-3580560.jpg" alt="" />
+            <img src="../images/flower.jpg" alt="" />
+            <img src="../images/foodimg1.jpg" alt="" />
+            <img src="../images/apple-1172060.jpg" alt="">
+            <div class="prenext">
+                <button class="prev" onclick="prevSlides(-1)">❮</button>
+                <button class="next" onclick="nextSlides(1)">❯</button>
+            </div>
+        </div>
+    </main>
+    <script src="carousel.js"></script>
+</body>
+
+</html>
+<script src="https://kit.fontawesome.com/5a216e4a4f.js" crossorigin="anonymous"></script>

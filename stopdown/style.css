@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  gap: 40px;
+  border: 1px solid rgb(231, 225, 225);
+  height: auto;
+  background-color: rgb(71, 66, 66);
+  padding: 40px;
+  justify-content: center;
+}
+
+.left-div {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(131, 128, 128);
+  width: 280px;
+  height: 220px;
+  background-color: black;
+  color: white;
+}
+
+.left-div> :nth-child(1) {
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+
+.left-div-mid {
+  display: flex;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  width: 169px;
+  height: 45px;
+  animation: outer 1s infinite;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+@keyframes outer {
+  from {
+    background-color: rgb(162, 109, 211);
+    color: black;
+  }
+
+  to {
+    background-color: rgb(93, 167, 167);
+    color: black;
+  }
+}
+
+#leftButton {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 20px;
+  width: 40px;
+  height: 20px;
+  left: -36px;
+}
+
+#leftButton button {
+  padding: 5px;
+  background-color: rgb(43, 38, 38);
+  color: #fff;
+}
+
+#leftButton button:hover {
+  background-color: rgb(144, 148, 148);
+  color: black;
+  font-weight: 600;
+}
+
+.right-div {
+  border: 1px solid rgb(131, 128, 128);
+  width: 300px;
+  height: 300px;
+  background-color: black;
+}
